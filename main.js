@@ -4,8 +4,9 @@ function getChoiseFromNumber(num){
     if (num == 2) return "scissors";
 }
 
-function getComputerChoise(){
+function getComputerChoice(){
     const num = Math.floor(Math.random() * 3);
     return getChoiseFromNumber(num);
 }
+
 
