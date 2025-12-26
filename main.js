@@ -1,3 +1,6 @@
+let computerScore = 0;
+let humanScore = 0;
+
 function getChoiceFromNumber(num){
     if (num == 0) return "rock";
     if (num == 1) return "paper";
