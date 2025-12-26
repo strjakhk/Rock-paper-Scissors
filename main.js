@@ -9,3 +9,7 @@ function getComputerChoice(){
     return getChoiseFromNumber(num);
 }
 
+function getHumanChoice(){
+    const choice = prompt("Rock, paper or scissors?");
+    return choice;
+}
