@@ -19,6 +19,11 @@ function getIndexOf(item){
     return index;
 }
 
+/* 
+    To get a winner, we check the item directlly to the right of it in the array of items.
+    Each item will beat the item to it's right.
+    If the item is the last one, then its index becomes -1, so it would beat the value with index 0
+*/
 function getResult(humanItem, computerItem){
     let hIndex = getIndexOf(humanItem);
     let cIndex = getIndexOf(computerItem);
