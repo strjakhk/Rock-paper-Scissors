@@ -1,16 +1,23 @@
+/** @type {NodeListOf<HTMLButtonElement>} */
+const buttons = document.querySelectorAll(".selection > button");
+
 const items = ["rock", "scissors", "paper"]
 let humanScore = 0;
 let computerScore = 0;
 
 
+// setting up event listeners for each selection button
+buttons.forEach((btn) => {
+    const choice = btn.id;
+    btn.addEventListener("click", () => {
+        const computerChoice = getComputerChoice();
+        playRound(choice, computerChoice);
+    })
+});
+
 function getComputerChoice(){
     const index = Math.floor(Math.random() * 3);
     return items[index];
-}
-
-function getHumanChoice(){
-    const choice = prompt("Rock, paper or scissors?").toLowerCase();
-    return choice;
 }
 
 function getIndexOf(item){
@@ -58,26 +65,3 @@ function playRound(hChoice, cChoice){
         lose(cChoice, hChoice);
     }
 }
-
-function playGame(){
-    for (let i = 0; i < 5; i++){
-        const hChoice = getHumanChoice();
-        const cChoice = getComputerChoice();
-
-        playRound(hChoice, cChoice);
-    }
-
-    if (humanScore > computerScore){
-        console.log("You won the game!");
-    }else if (computerScore > humanScore){
-        console.log("You lost the game :(");
-    }else{
-        console.log("It's a tie");
-    }
-}
-
-playGame();
-
-
-
-
